@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7d6e7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="TextNest" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>TextNest</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">offline-friendly</div>
+        <h1>TextNest</h1>
+      </div>
+      <div id="statusPill" class="status-pill">Ready</div>
+    </header>
+
+    <main>
+      <section id="home" class="screen active">
+        <div class="hero-card">
+          <div class="nest-icon">💗</div>
+          <h2>Your calls & texts, all in one nest.</h2>
+          <p>Quick access to calling, texting, favorite people, and ringtones.</p>
+        </div>
+
+        <div class="grid">
+          <button class="tile" data-open="call"><span>📞</span><b>Call</b><small>Dial a number</small></button>
+          <button class="tile" data-open="text"><span>💬</span><b>Text</b><small>Send a message</small></button>
+          <button class="tile" data-open="contacts"><span>👥</span><b>Contacts</b><small>Saved people</small></button>
+          <button class="tile" data-open="favorites"><span>⭐</span><b>Favorites</b><small>One-tap access</small></button>
+          <button class="tile" data-open="ringtones"><span>🔔</span><b>Ringtones</b><small>Preview tones</small></button>
+          <button class="tile" data-open="bluetooth"><span>🔵</span><b>Bluetooth</b><small>Device info</small></button>
+        </div>
+      </section>
+
+      <section id="call" class="screen">
+        <div class="screen-head"><button class="back">‹</button><h2>Call</h2></div>
+        <input id="callNumber" class="big-input" inputmode="tel" placeholder="Phone number" />
+        <div id="dialpad" class="dialpad"></div>
+        <button id="callBtn" class="primary">📞 Call</button>
+      </section>
+
+      <section id="text" class="screen">
+        <div class="screen-head"><button class="back">‹</button><h2>Text</h2></div>
+        <input id="textNumber" class="big-input" inputmode="tel" placeholder="Phone number" />
+        <textarea id="textBody" class="message-box" placeholder="Type your message..."></textarea>
+        <button id="textBtn" class="primary">💬 Open Messages</button>
+      </section>
+
+      <section id="contacts" class="screen">
+        <div class="screen-head"><button class="back">‹</button><h2>Contacts</h2></div>
+        <div class="contact-form">
+          <input id="contactName" placeholder="Name" />
+          <input id="contactPhone" inputmode="tel" placeholder="Phone number" />
+          <label class="checkrow"><input id="contactFavorite" type="checkbox" /> Add to Favorites</label>
+          <button id="saveContact" class="primary">Save Contact</button>
+        </div>
+        <div id="contactList" class="list"></div>
+      </section>
+
+      <section id="favorites" class="screen">
+        <div class="screen-head"><button class="back">‹</button><h2>Favorites</h2></div>
+        <div id="favoriteList" class="list"></div>
+      </section>
+
+      <section id="ringtones" class="screen">
+        <div class="screen-head"><button class="back">‹</button><h2>Ringtones</h2></div>
+        <p class="note">Pick a TextNest tone to preview and remember your favorite.</p>
+        <div id="ringtoneList" class="list"></div>
+        <div class="selected-tone">Selected: <b id="selectedTone">Nest Bell</b></div>
+      </section>
+
+      <section id="bluetooth" class="screen">
+        <div class="screen-head"><button class="back">‹</button><h2>Bluetooth</h2></div>
+        <div class="info-card">
+          <div class="big-emoji">🔵</div>
+          <h3>Bluetooth Device</h3>
+          <p id="btStatus">Checking browser support…</p>
+          <button id="btBtn" class="secondary">Check / Connect</button>
+        </div>
+        <p class="note">TextNest can show Bluetooth support when available. iPhone/iPad controls phone-call audio routing through iOS itself.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-open="home">⌂<span>Home</span></button>
+      <button data-open="call">☎<span>Call</span></button>
+      <button data-open="text">✉<span>Text</span></button>
+      <button data-open="contacts">♡<span>People</span></button>
+    </nav>
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
