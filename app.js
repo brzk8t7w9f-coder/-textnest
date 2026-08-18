@@ -70,10 +70,10 @@ document.getElementById('saveContact').onclick=()=>{
 function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 
 const tones=[
-  {name:'Nest Bell', file:nest-bell.wav'},
-  {name:'Soft Chime', file:soft-chime.wav'},
-  {name:'Happy Pop', file:happy-pop.wav'},
-  {name:'Classic Ring', file:classic-ring.wav'}
+  {name:'Nest Bell', file:'nest-bell.wav'},
+  {name:'Soft Chime', file:'soft-chime.wav'},
+  {name:'Happy Pop', file:'happy-pop.wav'},
+  {name:'Classic Ring', file:'classic-ring.wav'}
 ];
 let selected=localStorage.getItem('textnest_tone')||'Nest Bell';
 document.getElementById('selectedTone').textContent=selected;
